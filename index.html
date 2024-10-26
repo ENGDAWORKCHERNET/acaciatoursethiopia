@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="image/logo.png" type="image/x-">
+    <link rel="icon" href="image/logo.png" type="image/x-icon">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acacia Tours</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Updated styles for mobile responsiveness -->
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
         .navbar {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             background-color: #205022;
             padding: 10px;
@@ -22,10 +27,21 @@
             height: 50px;
             margin-right: 20px;
         }
+        .navbar h1 {
+            flex-grow: 1;
+            color: white;
+            font-size: 1.5em;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: white;
+        }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0;
         }
         section {
             padding: 20px;
@@ -42,24 +58,24 @@
         .image-quote {
             display: flex;
             align-items: center;
-            margin: 20px 0; /* Add margin for spacing */
-            flex-wrap: wrap; /* Allow wrapping */
+            margin: 20px 0;
+            flex-wrap: wrap;
         }
         .image-quote img {
-            width: calc(50% - 10px); /* Adjust image width for better responsiveness */
+            width: calc(50% - 10px);
             max-width: 100%;
             cursor: pointer;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 5px; /* Space between images */
+            margin: 5px;
         }
         .image-quote p {
             flex: 1;
             margin: 0 20px;
-            font-size: 1.5em; /* Make text bigger */
+            font-size: 1.5em;
             font-weight: bold;
             color: #333;
-            flex-basis: 40%; /* Set a basis for the text */
+            flex-basis: 40%;
         }
         .package {
             margin: 15px 0;
@@ -77,8 +93,8 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
         }
         .modal-content {
             margin: 5% auto;
@@ -140,6 +156,38 @@
             border-radius: 4px;
             background-color: #f9f9f9;
         }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar img {
+                margin: 0 auto;
+            }
+            nav {
+                justify-content: center;
+            }
+            .image-quote {
+                flex-direction: column;
+                text-align: center;
+            }
+            .image-quote img {
+                width: 90%;
+            }
+            .image-quote p {
+                font-size: 1.2em;
+                margin: 10px 0;
+            }
+            .package, .testimonial-form, .testimonial-list {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            .testimonial-form button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -176,7 +224,7 @@
                 <p>Adventure awaits around every corner.</p>
             </div>
         </section>
-   </main>
+    </main>
 
     <!-- About Us Section -->
     <section id="about">
@@ -203,92 +251,4 @@
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="testimonial">Your Testimonial:</label>
-                <textarea id="testimonial" name="testimonial" rows="4" required></textarea>
 
-                <button type="submit">Submit Review</button>
-            </form>
-        </div>
-        <div class="testimonial-list" id="testimonialList"></div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: acaciatoursethiopia@yahoo.com</p>
-        <p>Phone: +251 918 661 814</p>
-    </section>
-
-    <!-- Gallery Modals -->
-    <div id="gallery1" class="modal">
-        <span class="close" onclick="closeGallery('gallery1')">&times;</span>
-        <div class="modal-content">
-            <img src="image/image1.jpg" alt="Gallery 1 Image 1">
-            <img src="image/image2.jpg" alt="Gallery 1 Image 2">
-            <img src="image/image3.jpg" alt="Gallery 1 Image 3">
-            <img src="image/image4.jpg" alt="Gallery 1 Image 4">
-            <img src="image/image5.jpg" alt="Gallery 1 Image 5">
-        </div>
-    </div>
-
-    <div id="gallery2" class="modal">
-        <span class="close" onclick="closeGallery('gallery2')">&times;</span>
-        <div class="modal-content">
-            <img src="image/image6.jpg" alt="Gallery 2 Image 1">
-            <img src="image/image7.jpg" alt="Gallery 2 Image 2">
-            <img src="image/image8.jpg" alt="Gallery 2 Image 3">
-            <img src="image/image10.jpg" alt="Gallery 2 Image 5">
-            <img src="image/image11.jpg" alt="Gallery 2 Image 6">
-        </div>
-    </div>
-
-    <div id="gallery3" class="modal">
-        <span class="close" onclick="closeGallery('gallery3')">&times;</span>
-        <div class="modal-content">
-            <img src="image/image12.jpg" alt="Gallery 3 Image 1">
-            <img src="image/image13.jpg" alt="Gallery 3 Image 2">
-            <img src="image/image14.jpg" alt="Gallery 3 Image 3">
-            <img src="image/image15.jpg" alt="Gallery 3 Image 4">
-            <img src="image/image16.jpg" alt="Gallery 3 Image 5">
-        </div>
-    </div>
-
-    <script>
-        function openGallery(galleryId) {
-            document.getElementById(galleryId).style.display = "block";
-        }
-
-        function closeGallery(galleryId) {
-            document.getElementById(galleryId).style.display = "none";
-        }
-
-        // Close the modal when clicking outside of the content
-        window.onclick = function(event) {
-            const modals = [document.getElementById('gallery1'), document.getElementById('gallery2'), document.getElementById('gallery3')];
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            });
-        }
-
-        // Handle form submission
-        document.getElementById('reviewForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form from submitting the traditional way
-
-            const name = document.getElementById('name').value;
-            const testimonial = document.getElementById('testimonial').value;
-
-            const testimonialItem = document.createElement('div');
-            testimonialItem.className = 'testimonial-item';
-            testimonialItem.innerHTML = `<strong>${name}</strong><p>${testimonial}</p>`;
-
-            document.getElementById('testimonialList').appendChild(testimonialItem);
-
-            // Clear the form
-            document.getElementById('reviewForm').reset();
-        });
-    </script>
-
-</body>
-</html>
