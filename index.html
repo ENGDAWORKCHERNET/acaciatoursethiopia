@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="image/logo.png" type="image/x-">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acacia Tours</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #205022;
+            padding: 10px;
+        }
+        .navbar img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .gallery-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .image-quote {
+            display: flex;
+            align-items: center;
+            margin: 20px 0; /* Add margin for spacing */
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+        .image-quote img {
+            width: calc(50% - 10px); /* Adjust image width for better responsiveness */
+            max-width: 100%;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 5px; /* Space between images */
+        }
+        .image-quote p {
+            flex: 1;
+            margin: 0 20px;
+            font-size: 1.5em; /* Make text bigger */
+            font-weight: bold;
+            color: #333;
+            flex-basis: 40%; /* Set a basis for the text */
+        }
+        .package {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: 5% auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center; /* Center the images in the modal */
+            max-width: 90%; /* Increase max width for the modal */
+        }
+        .modal-content img {
+            width: 100%;
+            max-width: 400px; /* Increase max size for modal images */
+            border-radius: 8px;
+        }
+        .close {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            right: 25px;
+            top: 15px;
+            cursor: pointer;
+        }
+        .testimonial-form {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .testimonial-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .testimonial-form input,
+        .testimonial-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .testimonial-form button {
+            background-color: #1f6321;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .testimonial-list {
+            margin-top: 20px;
+        }
+        .testimonial-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <img src="image/logo.png" alt="Acacia Tours Logo" class="logo">
+            <h1>Acacia Tours</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#ethiopia">Ethiopia</a>
+                <a href="#tour-packages">Tour Packages</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section with Alternating Images and Quotes -->
+    <main>
+        <section id="home" class="gallery-preview">
+            <div class="image-quote">
+                <img src="image/image1.jpg" alt="Scenic View 1" onclick="openGallery('gallery1')">
+                <p>Experience the beauty of nature like never before.</p>
+            </div>
+            <div class="image-quote">
+                <p>Discover landscapes that take your breath away.</p>
+                <img src="image/image2.jpg" alt="Scenic View 2" onclick="openGallery('gallery2')">
+            </div>
+            <div class="image-quote">
+                <img src="image/image3.jpg" alt="Scenic View 3" onclick="openGallery('gallery3')">
+                <p>Adventure awaits around every corner.</p>
+            </div>
+        </section>
+   </main>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p><strong>Established in 2003, Acacia Tours has become one of Ethiopia’s top tour operators, providing exceptional travel services to visitors from around the world. We pride ourselves on providing expert knowledge and up-to-date information on all destinations we serve.</strong></p>
+        <p><strong>From transfers and accommodations to personalized tours and itineraries, we offer seamless travel management and 24/7 support, ensuring a hassle-free, memorable experience.</strong></p>
+        <p><strong>As passionate travelers, we understand diverse needs whether for families, solo adventurers, or groups and use our expertise to craft unique experiences.</strong></p>
+        <p><strong>Our vision is to lead Ethiopia’s tourism industry through innovation, sustainable growth, and exceptional service. Customer-focused, we prioritize reliable, timely, and cost-effective service for every client.</strong></p>
+    </section>
+
+    <!-- Ethiopia Section -->
+    <section id="ethiopia">
+        <h2>Discover Ethiopia</h2>
+        <p><strong>History:</strong> Ethiopia, one of the oldest nations in the world, has a rich history dating back thousands of years. Known for being the birthplace of coffee and the ancient kingdom of Aksum, Ethiopia boasts a unique cultural heritage and is home to the rock-hewn churches of Lalibela and other UNESCO World Heritage sites.</p>
+        <p><strong>Facts:</strong> Ethiopia is the only African country never colonized, and it has its own calendar, which is about 7-8 years behind the Gregorian calendar. It’s also known for its diverse landscapes, including the Great Rift Valley, highlands, and volcanic lakes, which contribute to its incredible biodiversity.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-form">
+            <h3>Leave a Review</h3>
+            <form id="reviewForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="testimonial">Your Testimonial:</label>
+                <textarea id="testimonial" name="testimonial" rows="4" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+        <div class="testimonial-list" id="testimonialList"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: acaciatoursethiopia@yahoo.com</p>
+        <p>Phone: +251 918 661 814</p>
+    </section>
+
+    <!-- Gallery Modals -->
+    <div id="gallery1" class="modal">
+        <span class="close" onclick="closeGallery('gallery1')">&times;</span>
+        <div class="modal-content">
+            <img src="image/image1.jpg" alt="Gallery 1 Image 1">
+            <img src="image/image2.jpg" alt="Gallery 1 Image 2">
+            <img src="image/image3.jpg" alt="Gallery 1 Image 3">
+            <img src="image/image4.jpg" alt="Gallery 1 Image 4">
+            <img src="image/image5.jpg" alt="Gallery 1 Image 5">
+        </div>
+    </div>
+
+    <div id="gallery2" class="modal">
+        <span class="close" onclick="closeGallery('gallery2')">&times;</span>
+        <div class="modal-content">
+            <img src="image/image6.jpg" alt="Gallery 2 Image 1">
+            <img src="image/image7.jpg" alt="Gallery 2 Image 2">
+            <img src="image/image8.jpg" alt="Gallery 2 Image 3">
+            <img src="image/image10.jpg" alt="Gallery 2 Image 5">
+            <img src="image/image11.jpg" alt="Gallery 2 Image 6">
+        </div>
+    </div>
+
+    <div id="gallery3" class="modal">
+        <span class="close" onclick="closeGallery('gallery3')">&times;</span>
+        <div class="modal-content">
+            <img src="image/image12.jpg" alt="Gallery 3 Image 1">
+            <img src="image/image13.jpg" alt="Gallery 3 Image 2">
+            <img src="image/image14.jpg" alt="Gallery 3 Image 3">
+            <img src="image/image15.jpg" alt="Gallery 3 Image 4">
+            <img src="image/image16.jpg" alt="Gallery 3 Image 5">
+        </div>
+    </div>
+
+    <script>
+        function openGallery(galleryId) {
+            document.getElementById(galleryId).style.display = "block";
+        }
+
+        function closeGallery(galleryId) {
+            document.getElementById(galleryId).style.display = "none";
+        }
+
+        // Close the modal when clicking outside of the content
+        window.onclick = function(event) {
+            const modals = [document.getElementById('gallery1'), document.getElementById('gallery2'), document.getElementById('gallery3')];
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+
+        // Handle form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            const name = document.getElementById('name').value;
+            const testimonial = document.getElementById('testimonial').value;
+
+            const testimonialItem = document.createElement('div');
+            testimonialItem.className = 'testimonial-item';
+            testimonialItem.innerHTML = `<strong>${name}</strong><p>${testimonial}</p>`;
+
+            document.getElementById('testimonialList').appendChild(testimonialItem);
+
+            // Clear the form
+            document.getElementById('reviewForm').reset();
+        });
+    </script>
+
+</body>
+</html>

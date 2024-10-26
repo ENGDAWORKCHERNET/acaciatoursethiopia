@@ -1,0 +1,118 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    height: 80px;
+    margin-right: 20px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+.gallery-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.image-quote {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 1rem 0;
+}
+
+.image-quote img {
+    width: 500px;  /* Increased width */
+    height: 300px; /* Increased height */
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.image-quote.left {
+    flex-direction: row;
+    text-align: left;
+}
+
+.image-quote.right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.image-quote p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 400px;
+}
+
+/* About Us Section */
+#about {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Modal Gallery */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-content img {
+    width: 30%;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
